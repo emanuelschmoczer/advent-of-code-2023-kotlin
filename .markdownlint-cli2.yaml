@@ -1,0 +1,15 @@
+config:
+  MD013:
+    line_length: 160
+  MD026:
+    punctuation: ".,;:。，；：！"
+
+# Define glob expressions to use (only valid at root)
+globs:
+  - "**/*.md"
+
+# Enable progress on stdout (only valid at root)
+noProgress: false
+
+# Show found files on stdout (only valid at root)
+showFound: true
