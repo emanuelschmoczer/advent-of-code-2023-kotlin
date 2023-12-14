@@ -14,11 +14,21 @@ fun readInput(name: String) = Path("src/$name.txt").readLines()
 fun readText(name: String): String = Path("src/$name.txt").readLines().joinToString("\n")
 
 /**
- * Converts string to md5 hash.
+ * True if this Char is not a digit.
+ */
+fun Char.isNotDigit() = !this.isDigit()
+
+/**
+ * Converts String to md5 hash.
  */
 fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray()))
     .toString(16)
     .padStart(32, '0')
+
+/**
+ * Returns true if this String is a number
+ */
+fun String.isNumber() = this.isNotBlank() && this.all { it.isDigit() }
 
 /**
  * The cleaner shorthand for printing output.
